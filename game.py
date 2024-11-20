@@ -21,7 +21,6 @@ vx = velocity * uniform(-1, 1)
 vy = velocity * uniform(-1, 1)
 
 vp = 10
-
 height = 10
 width = 80
 xp = (WIDTH - width) // 2
@@ -42,8 +41,11 @@ def drawScore():
     path = pygame.font.match_font("arial")
     Font = pygame.font.Font(path, 30)
     text = ''.join([chr(int(str(el), 8)) for el in [107, 141, 155, 145, 40, 157, 166, 145, 162]])
+    result = f"Your score: {score}"
     a = Font.render(text, 1, (255, 255, 255))
+    b = Font.render(result, 1, (255, 255, 255))
     win.blit(a, (WIDTH // 2 - 70, HEIGHT // 3))
+    win.blit(b, (WIDTH // 2 - 70, HEIGHT // 2))
     pygame.display.update()
 
 
